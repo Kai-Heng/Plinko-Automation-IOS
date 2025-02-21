@@ -14,6 +14,9 @@
 		72394D492D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D482D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift */; };
 		72394D532D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D522D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift */; };
 		72394D552D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */; };
+		72394D632D68EF7600476EE9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72394D622D68EF7500476EE9 /* WebKit.framework */; };
+		72394D652D68F23A00476EE9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D642D68F23900476EE9 /* WebView.swift */; };
+		72394D672D68F52A00476EE9 /* CookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D662D68F52A00476EE9 /* CookieManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		72394D4E2D68EA9100476EE9 /* Plinko Automation IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plinko Automation IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72394D522D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSUITests.swift; sourceTree = "<group>"; };
 		72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72394D622D68EF7500476EE9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		72394D642D68F23900476EE9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		72394D662D68F52A00476EE9 /* CookieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72394D632D68EF7600476EE9 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,7 @@
 				72394D472D68EA9100476EE9 /* Plinko Automation IOSTests */,
 				72394D512D68EA9100476EE9 /* Plinko Automation IOSUITests */,
 				72394D342D68EA9000476EE9 /* Products */,
+				72394D612D68EF7500476EE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +105,8 @@
 			children = (
 				72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */,
 				72394D382D68EA9000476EE9 /* ContentView.swift */,
+				72394D642D68F23900476EE9 /* WebView.swift */,
+				72394D662D68F52A00476EE9 /* CookieManager.swift */,
 				72394D3A2D68EA9100476EE9 /* Assets.xcassets */,
 				72394D3C2D68EA9100476EE9 /* Plinko_Automation_IOS.entitlements */,
 				72394D3D2D68EA9100476EE9 /* Preview Content */,
@@ -127,6 +137,14 @@
 				72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */,
 			);
 			path = "Plinko Automation IOSUITests";
+			sourceTree = "<group>";
+		};
+		72394D612D68EF7500476EE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72394D622D68EF7500476EE9 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72394D652D68F23A00476EE9 /* WebView.swift in Sources */,
 				72394D392D68EA9000476EE9 /* ContentView.swift in Sources */,
 				72394D372D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift in Sources */,
+				72394D672D68F52A00476EE9 /* CookieManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
