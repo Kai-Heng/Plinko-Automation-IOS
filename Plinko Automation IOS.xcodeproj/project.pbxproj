@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72394D372D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */; };
+		72394D392D68EA9000476EE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D382D68EA9000476EE9 /* ContentView.swift */; };
+		72394D3B2D68EA9100476EE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72394D3A2D68EA9100476EE9 /* Assets.xcassets */; };
+		72394D3F2D68EA9100476EE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72394D3E2D68EA9100476EE9 /* Preview Assets.xcassets */; };
+		72394D492D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D482D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift */; };
+		72394D532D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D522D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift */; };
+		72394D552D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72394D452D68EA9100476EE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72394D2B2D68EA9000476EE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72394D322D68EA9000476EE9;
+			remoteInfo = "Plinko Automation IOS";
+		};
+		72394D4F2D68EA9100476EE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72394D2B2D68EA9000476EE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72394D322D68EA9000476EE9;
+			remoteInfo = "Plinko Automation IOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72394D332D68EA9000476EE9 /* Plinko Automation IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plinko Automation IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSApp.swift; sourceTree = "<group>"; };
+		72394D382D68EA9000476EE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72394D3A2D68EA9100476EE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72394D3C2D68EA9100476EE9 /* Plinko_Automation_IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Plinko_Automation_IOS.entitlements; sourceTree = "<group>"; };
+		72394D3E2D68EA9100476EE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72394D442D68EA9100476EE9 /* Plinko Automation IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plinko Automation IOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72394D482D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSTests.swift; sourceTree = "<group>"; };
+		72394D4E2D68EA9100476EE9 /* Plinko Automation IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plinko Automation IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72394D522D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSUITests.swift; sourceTree = "<group>"; };
+		72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72394D302D68EA9000476EE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D412D68EA9100476EE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D4B2D68EA9100476EE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72394D2A2D68EA9000476EE9 = {
+			isa = PBXGroup;
+			children = (
+				72394D352D68EA9000476EE9 /* Plinko Automation IOS */,
+				72394D472D68EA9100476EE9 /* Plinko Automation IOSTests */,
+				72394D512D68EA9100476EE9 /* Plinko Automation IOSUITests */,
+				72394D342D68EA9000476EE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72394D342D68EA9000476EE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72394D332D68EA9000476EE9 /* Plinko Automation IOS.app */,
+				72394D442D68EA9100476EE9 /* Plinko Automation IOSTests.xctest */,
+				72394D4E2D68EA9100476EE9 /* Plinko Automation IOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72394D352D68EA9000476EE9 /* Plinko Automation IOS */ = {
+			isa = PBXGroup;
+			children = (
+				72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */,
+				72394D382D68EA9000476EE9 /* ContentView.swift */,
+				72394D3A2D68EA9100476EE9 /* Assets.xcassets */,
+				72394D3C2D68EA9100476EE9 /* Plinko_Automation_IOS.entitlements */,
+				72394D3D2D68EA9100476EE9 /* Preview Content */,
+			);
+			path = "Plinko Automation IOS";
+			sourceTree = "<group>";
+		};
+		72394D3D2D68EA9100476EE9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				72394D3E2D68EA9100476EE9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72394D472D68EA9100476EE9 /* Plinko Automation IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				72394D482D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift */,
+			);
+			path = "Plinko Automation IOSTests";
+			sourceTree = "<group>";
+		};
+		72394D512D68EA9100476EE9 /* Plinko Automation IOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				72394D522D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift */,
+				72394D542D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift */,
+			);
+			path = "Plinko Automation IOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72394D322D68EA9000476EE9 /* Plinko Automation IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72394D582D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOS" */;
+			buildPhases = (
+				72394D2F2D68EA9000476EE9 /* Sources */,
+				72394D302D68EA9000476EE9 /* Frameworks */,
+				72394D312D68EA9000476EE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Plinko Automation IOS";
+			productName = "Plinko Automation IOS";
+			productReference = 72394D332D68EA9000476EE9 /* Plinko Automation IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72394D432D68EA9100476EE9 /* Plinko Automation IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72394D5B2D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOSTests" */;
+			buildPhases = (
+				72394D402D68EA9100476EE9 /* Sources */,
+				72394D412D68EA9100476EE9 /* Frameworks */,
+				72394D422D68EA9100476EE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72394D462D68EA9100476EE9 /* PBXTargetDependency */,
+			);
+			name = "Plinko Automation IOSTests";
+			productName = "Plinko Automation IOSTests";
+			productReference = 72394D442D68EA9100476EE9 /* Plinko Automation IOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		72394D4D2D68EA9100476EE9 /* Plinko Automation IOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72394D5E2D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOSUITests" */;
+			buildPhases = (
+				72394D4A2D68EA9100476EE9 /* Sources */,
+				72394D4B2D68EA9100476EE9 /* Frameworks */,
+				72394D4C2D68EA9100476EE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72394D502D68EA9100476EE9 /* PBXTargetDependency */,
+			);
+			name = "Plinko Automation IOSUITests";
+			productName = "Plinko Automation IOSUITests";
+			productReference = 72394D4E2D68EA9100476EE9 /* Plinko Automation IOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72394D2B2D68EA9000476EE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					72394D322D68EA9000476EE9 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					72394D432D68EA9100476EE9 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 72394D322D68EA9000476EE9;
+					};
+					72394D4D2D68EA9100476EE9 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 72394D322D68EA9000476EE9;
+					};
+				};
+			};
+			buildConfigurationList = 72394D2E2D68EA9000476EE9 /* Build configuration list for PBXProject "Plinko Automation IOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72394D2A2D68EA9000476EE9;
+			productRefGroup = 72394D342D68EA9000476EE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72394D322D68EA9000476EE9 /* Plinko Automation IOS */,
+				72394D432D68EA9100476EE9 /* Plinko Automation IOSTests */,
+				72394D4D2D68EA9100476EE9 /* Plinko Automation IOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72394D312D68EA9000476EE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72394D3F2D68EA9100476EE9 /* Preview Assets.xcassets in Resources */,
+				72394D3B2D68EA9100476EE9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D422D68EA9100476EE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D4C2D68EA9100476EE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72394D2F2D68EA9000476EE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72394D392D68EA9000476EE9 /* ContentView.swift in Sources */,
+				72394D372D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D402D68EA9100476EE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72394D492D68EA9100476EE9 /* Plinko_Automation_IOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72394D4A2D68EA9100476EE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72394D552D68EA9100476EE9 /* Plinko_Automation_IOSUITestsLaunchTests.swift in Sources */,
+				72394D532D68EA9100476EE9 /* Plinko_Automation_IOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72394D462D68EA9100476EE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72394D322D68EA9000476EE9 /* Plinko Automation IOS */;
+			targetProxy = 72394D452D68EA9100476EE9 /* PBXContainerItemProxy */;
+		};
+		72394D502D68EA9100476EE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72394D322D68EA9000476EE9 /* Plinko Automation IOS */;
+			targetProxy = 72394D4F2D68EA9100476EE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		72394D562D68EA9100476EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		72394D572D68EA9100476EE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		72394D592D68EA9100476EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Plinko Automation IOS/Plinko_Automation_IOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Plinko Automation IOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		72394D5A2D68EA9100476EE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Plinko Automation IOS/Plinko_Automation_IOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Plinko Automation IOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		72394D5C2D68EA9100476EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plinko Automation IOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plinko Automation IOS";
+			};
+			name = Debug;
+		};
+		72394D5D2D68EA9100476EE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plinko Automation IOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plinko Automation IOS";
+			};
+			name = Release;
+		};
+		72394D5F2D68EA9100476EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Plinko Automation IOS";
+			};
+			name = Debug;
+		};
+		72394D602D68EA9100476EE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 849BC5H4TS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xemtron-LLC.Plinko-Automation-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Plinko Automation IOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72394D2E2D68EA9000476EE9 /* Build configuration list for PBXProject "Plinko Automation IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72394D562D68EA9100476EE9 /* Debug */,
+				72394D572D68EA9100476EE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72394D582D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72394D592D68EA9100476EE9 /* Debug */,
+				72394D5A2D68EA9100476EE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72394D5B2D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72394D5C2D68EA9100476EE9 /* Debug */,
+				72394D5D2D68EA9100476EE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72394D5E2D68EA9100476EE9 /* Build configuration list for PBXNativeTarget "Plinko Automation IOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72394D5F2D68EA9100476EE9 /* Debug */,
+				72394D602D68EA9100476EE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72394D2B2D68EA9000476EE9 /* Project object */;
+}
