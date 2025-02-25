@@ -12,44 +12,73 @@ struct ContentView: View {
     let plinkoURL = URL(string: "https://stake.us/casino/games/plinko")!
 
     @State private var webView = WebView(url: URL(string: "https://stake.us/casino/games/plinko")!)
+    
+    @State private var userTargetBalance: String = ""
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 16) {
+            // The actual game
             webView
-                .edgesIgnoringSafeArea(.all) // Remove top white space
-                .frame(maxHeight: .infinity) // Make it fullscreen
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                // Make sure it’s scrollable / no extra safe area padding:
+                .edgesIgnoringSafeArea(.all)
 
-            HStack(spacing: 20) {
-                Button(action: {
+            // Controls
+            HStack(spacing: 5) {
+                Button("Inject JS") {
                     webView.injectJavaScript()
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                }) {
-                    Text("Start")
-                        .font(.headline)
-                        .frame(width: 120, height: 50)
-                        .background(LinearGradient(gradient: Gradient(colors: [.green, .blue]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .shadow(radius: 5)
                 }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                
+                Button("Start") {
+                    webView.startJS()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
 
-                Button(action: {
-                    print("🚫 Stopping Automation (Reload Page)")
-                    webView.webView.reload()
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                }) {
-                    Text("Stop")
-                        .font(.headline)
-                        .frame(width: 120, height: 50)
-                        .background(LinearGradient(gradient: Gradient(colors: [.red, .orange]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .shadow(radius: 5)
+                Button("Pause") {
+                    webView.pauseJS()
+                }
+                .padding()
+                .background(Color.orange)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+
+                Button("Resume") {
+                    webView.resumeJS()
+                }
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+
+                Button("Stop") {
+                    webView.stopJS()
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+            }
+            .padding()
+
+            // Example: set target balance
+            HStack {
+                TextField("Target Balance", text: $userTargetBalance)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 120)
+                Button("Set") {
+                    if let val = Double(userTargetBalance) {
+                        webView.setTargetBalance(val)
+                    }
                 }
             }
-            .padding(.vertical, 10)
-            .background(Color(.systemGray6)) // Light background for buttons
-            .edgesIgnoringSafeArea(.bottom)
+            .padding()
         }
     }
 }
