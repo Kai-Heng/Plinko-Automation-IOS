@@ -25,13 +25,13 @@ struct ContentView: View {
 
             // Controls
             HStack(spacing: 5) {
-                Button("Inject JS") {
-                    webView.injectJavaScript()
-                }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
+//                Button("Inject JS") {
+//                    webView.injectJavaScript()
+//                }
+//                .padding()
+//                .background(Color.blue)
+//                .foregroundColor(.white)
+//                .cornerRadius(8)
                 
                 Button("Start") {
                     webView.startJS()
