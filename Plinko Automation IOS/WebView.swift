@@ -111,6 +111,7 @@ struct WebView: ViewRepresentable {
             let currentFib = 0.001;
             let lastMultiplier = "";
             let targetBalance = 999999999;
+            let lastBetID = "";
             
             let betNumber = 0;
             let counter = 0;
@@ -120,6 +121,7 @@ struct WebView: ViewRepresentable {
             const multiplierSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-aj9tu.stacked > div.game-content.svelte-1ku0r3.stacked > div > div.last-bet-wrap.svelte-1hd0qmg > div > button";
             const balanceSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-51jofe > div > div > div > button > div > div > span.content.svelte-didcjq > span";
             const coinSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-51jofe > div > div > div > button";
+            const lastBetSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div";
 
             function logToSwift(message) {
                 try {
@@ -149,41 +151,8 @@ struct WebView: ViewRepresentable {
                 }
                 return null;
             }
-
-            window.setTargetBalance = function(newVal) {
-                targetBalance = parseFloat(newVal);
-                logToSwift("✅ Target Balance set to: " + targetBalance);
-            };
         
-            window.plinkoStart = function() {
-                running = true;
-                paused = false
-                logToSwift("▶️ STARTED from Swift");
-            };
-
-            window.plinkoPause = function() {
-                paused = true;
-                logToSwift("⏸ PAUSED from Swift");
-            };
-            window.plinkoResume = function() {
-                paused = false;
-                logToSwift("▶️ RESUMED from Swift");
-            };
-            window.plinkoStop = function() {
-                running = false;
-                paused = false
-                logToSwift("⛔️ STOPPED from Swift");
-            };
-
-            function placeBet() {
-                if (!running){
-                    return;
-                }
-                if (paused) {
-                    logToSwift("⏸ Automation paused, skipping bet");
-                    return;
-                }
-
+            function betLogic(){
                 let multiplierEl = getElement(multiplierSelector);
                 
                 if (multiplierEl) {
@@ -246,7 +215,59 @@ struct WebView: ViewRepresentable {
                 }
             }
 
-            // Place a bet every 3 seconds
+            window.setTargetBalance = function(newVal) {
+                targetBalance = parseFloat(newVal);
+                logToSwift("✅ Target Balance set to: " + targetBalance);
+            };
+        
+            window.plinkoStart = function() {
+                running = true;
+                paused = false
+                logToSwift("▶️ STARTED from Swift");
+            };
+
+            window.plinkoPause = function() {
+                paused = true;
+                logToSwift("⏸ PAUSED from Swift");
+            };
+            window.plinkoResume = function() {
+                paused = false;
+                logToSwift("▶️ RESUMED from Swift");
+            };
+            window.plinkoStop = function() {
+                running = false;
+                paused = false
+                logToSwift("⛔️ STOPPED from Swift");
+            };
+
+            function placeBet() {
+                if (!running){
+                    return;
+                }
+                if (paused) {
+                    logToSwift("⏸ Automation paused, skipping bet");
+                    return;
+                }
+                
+                if (lastBetID === ""){
+                    let firstBetIDEl = getElement(lastBetSelector);
+                    lastBetID = firstBetIDEl.getAttribute('data-last-bet');
+                    logToSwift(lastBetID);
+                    
+                    betLogic();
+                    return;
+                }
+                
+                let lastBetIDEl = getElement(lastBetSelector);
+                let currentBetID = lastBetIDEl.getAttribute('data-last-bet');
+        
+                if(currentBetID != lastBetID){
+                    lastBetID = currentBetID;
+                    betLogic();
+                }
+            }
+
+            // Place a bet every 1 seconds
             setInterval(placeBet, 1000);
 
             logToSwift("Plinko JS automation injected. Ready to bet...");
