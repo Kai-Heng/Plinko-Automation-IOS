@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var userTargetBalance: String = ""
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: -15) {
             // The actual game
             webView
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -25,14 +25,6 @@ struct ContentView: View {
 
             // Controls
             HStack(spacing: 5) {
-//                Button("Inject JS") {
-//                    webView.injectJavaScript()
-//                }
-//                .padding()
-//                .background(Color.blue)
-//                .foregroundColor(.white)
-//                .cornerRadius(8)
-                
                 Button("Start") {
                     webView.startJS()
                 }
@@ -71,15 +63,23 @@ struct ContentView: View {
             HStack {
                 TextField("Target Balance", text: $userTargetBalance)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 120)
+                    .frame(width: 200)
+                    .padding(8)
+//                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(5)
+                    .foregroundColor(.white)
                 Button("Set") {
                     if let val = Double(userTargetBalance) {
                         webView.setTargetBalance(val)
                     }
                 }
+                .foregroundColor(.blue)
             }
             .padding()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black) // 🔥 Change to a dark background
+        .edgesIgnoringSafeArea(.all) // Ensure it fills the entire screen
     }
 }
 
