@@ -105,6 +105,7 @@ struct WebView: ViewRepresentable {
         (function() {
             let running = false;
             let paused = false;
+            let brainlessMode = false;
             let consecutiveLosses = 0;
             let lossStreakThreshold = 7;
             let previousFib = 0.0;
@@ -116,11 +117,11 @@ struct WebView: ViewRepresentable {
             let betNumber = 0;
             let counter = 0;
 
-            const betInputSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-aj9tu.stacked > div.game-sidebar.svelte-2ftx9j.stacked > label:nth-child(1) > div > div.input-content.svelte-1nbx5re > input";
-            const playButtonSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-aj9tu.stacked > div.game-sidebar.svelte-2ftx9j.stacked > button";
-            const multiplierSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-aj9tu.stacked > div.game-content.svelte-1ku0r3.stacked > div > div.last-bet-wrap.svelte-1hd0qmg > div > button";
-            const balanceSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-51jofe > div > div > div > button > div > div > span.content.svelte-didcjq > span";
-            const coinSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-51jofe > div > div > div > button";
+            const betInputSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-sidebar.svelte-2ftx9j.stacked > label:nth-child(1) > div > div.input-content.svelte-1nbx5re > input";
+            const playButtonSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-sidebar.svelte-2ftx9j.stacked > button";
+            const multiplierSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-content.svelte-1ku0r3.stacked > div > div.last-bet-wrap.svelte-1hd0qmg > div > button";
+            const balanceSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button > div > div > span.content.svelte-didcjq > span";
+            const coinSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button";
             const lastBetSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div";
 
             function logToSwift(message) {
@@ -195,6 +196,8 @@ struct WebView: ViewRepresentable {
                 if (!isNaN(balance) && betAmount > balance * 0.5) {
                     betAmount = balance / 2;
                 }
+        
+                logToSwift("Balance:" + balance);
 
                 let betInput = getElement(betInputSelector);
                 let playButton = getElement(playButtonSelector);
@@ -207,6 +210,44 @@ struct WebView: ViewRepresentable {
                     counter++;
 
                     logToSwift(counter + ". [AutoBet] Placed bet = " + betAmount.toFixed(2) + " | consecutiveLosses=" + consecutiveLosses);
+                }
+
+                if (balance >= targetBalance) {
+                    running = false;
+                    logToSwift("🏆 Reached target balance, stopping...");
+                }
+            }
+        
+            function brainless_bet_logic(){
+                let balance = getBalance();
+
+                let betAmount = 0.0001;
+
+                betAmount = balance * 0.0001;
+
+                
+                let currencyEl = document.querySelector(coinSelector);
+                let currency = currencyEl ? currencyEl.getAttribute('data-active-currency') : "gold";
+        
+                if (betAmount < 0.11 && currency === "gold") {
+                    betAmount = 0.11;
+                }
+                else if (betAmount < 0.01 && currency === "sweeps"){
+                    betAmount = 0.01;
+                }
+
+
+                let betInput = getElement(betInputSelector);
+                let playButton = getElement(playButtonSelector);
+                if (betInput && playButton) {
+                    betInput.value = betAmount.toFixed(2);
+                    let event = new Event('input', { bubbles: true });
+                    betInput.dispatchEvent(event);
+
+                    playButton.click();
+                    counter++;
+
+                    logToSwift(counter + ". [AutoBet] Placed bet = " + betAmount.toFixed(2));
                 }
 
                 if (balance >= targetBalance) {
@@ -239,6 +280,13 @@ struct WebView: ViewRepresentable {
                 paused = false
                 logToSwift("⛔️ STOPPED from Swift");
             };
+            
+            window.toggleBrainlessMode = function(state) {
+                brainlessMode = state;
+                logToSwift("Brainless Mode: " + brainlessMode);
+            };
+
+
 
             function placeBet() {
                 if (!running){
@@ -249,22 +297,28 @@ struct WebView: ViewRepresentable {
                     return;
                 }
                 
-                if (lastBetID === ""){
-                    let firstBetIDEl = getElement(lastBetSelector);
-                    lastBetID = firstBetIDEl.getAttribute('data-last-bet');
-                    logToSwift(lastBetID);
+                if(brainlessMode){
+                    brainless_bet_logic();
+                }
+                else{
+                    if (lastBetID === ""){
+                        let firstBetIDEl = getElement(lastBetSelector);
+                        lastBetID = firstBetIDEl.getAttribute('data-last-bet');
+                        logToSwift(lastBetID);
+                        
+                        betLogic();
+                        return;
+                    }
                     
-                    betLogic();
-                    return;
+                    let lastBetIDEl = getElement(lastBetSelector);
+                    let currentBetID = lastBetIDEl.getAttribute('data-last-bet');
+            
+                    if(currentBetID != lastBetID){
+                        lastBetID = currentBetID;
+                        betLogic();
+                    }
                 }
-                
-                let lastBetIDEl = getElement(lastBetSelector);
-                let currentBetID = lastBetIDEl.getAttribute('data-last-bet');
-        
-                if(currentBetID != lastBetID){
-                    lastBetID = currentBetID;
-                    betLogic();
-                }
+
             }
 
             // Place a bet every 1 seconds
@@ -322,5 +376,10 @@ struct WebView: ViewRepresentable {
                 print("✅ Successfully set target balance to \(formattedValue)")
             }
         }
+    }
+    
+    func toggleBrainlessMode(_ state: Bool) {
+        let code = "window.toggleBrainlessMode(\(state));"
+        webView.evaluateJavaScript(code)
     }
 }
