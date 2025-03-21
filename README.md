@@ -78,9 +78,6 @@ Plinko Automation iOS is a script designed to automate betting on the Plinko gam
 ❌ **Automation stops suddenly?**  
 ✔ Verify that the **target balance** is not reached.  
 
-❌ **Background execution not working?**  
-✔ Ensure the **silent audio** is playing in the background.  
-
 ---
 
 ## **Disclaimer**
