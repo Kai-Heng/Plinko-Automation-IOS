@@ -1,64 +1,90 @@
-# Plinko Automation iOS
+# **Plinko Automation iOS**
 
-## Overview
-Plinko Automation iOS is a script designed to automate betting on the Plinko game on Stake using a Fibonacci-based betting strategy. The automation interacts with the web elements of the game, places bets dynamically, and manages bet amounts based on loss streaks. It also adjusts the bet amount according to the active currency (Gold or Sweeps) and stops once the target balance is reached.
+## **Overview**
+Plinko Automation iOS is a script designed to automate betting on the Plinko game on **Stake** using a **Fibonacci-based** and **brainless** betting strategy. The automation interacts with the **web elements** of the game, places bets dynamically, and manages bet amounts based on **loss streaks** or **continuous betting** (brainless mode). It also adjusts the bet amount according to the **active currency** (Gold or Sweeps) and stops once the **target balance** is reached.
 
-## Features
-- **Automated Betting**: Places bets continuously using a Fibonacci betting strategy.
-- **Loss Tracking**: Increases bet amount after consecutive losses.
-- **Currency Detection**: Adjusts bet values based on active currency (Gold or Sweeps).
-- **Balance Management**: Prevents over-betting by capping bets at 50% of the balance.
-- **Start/Stop Controls**: Provides commands to start, pause, resume, and stop the automation.
-- **Logging**: Displays real-time logs of bets and automation status in the console.
+## **Features**
+✅ **Automated Betting:** Places bets continuously using either **Fibonacci betting strategy** or **brainless mode**.  
+✅ **Brainless Mode:** When enabled, places the same small bet repeatedly without tracking previous results.  
+✅ **Loss Tracking:** Increases the bet amount after consecutive losses in Fibonacci mode.  
+✅ **Currency Detection:** Adjusts bet values based on active currency (**Gold or Sweeps**).  
+✅ **Balance Management:** Prevents over-betting by capping bets at **50% of the balance**.  
+✅ **Start/Stop Controls:** Provides commands to **start, pause, resume, and stop** the automation.  
+✅ **Target Balance Setting:** Allows defining a stopping point when a certain balance is reached.  
+✅ **Haptic Feedback:** Provides **tactile feedback** when pressing any control buttons.  
+✅ **Dark Theme & Robotic UI Design:** Improved visuals with futuristic UI enhancements.  
+✅ **Background Execution:** Keeps the app running in the background using a **silent audio trick**.  
 
-## How to Use
-### 1. Inject the Script (Automatic Loaded)
-Load the script inside a WebView on iOS using Swift's `evaluateJavaScript()` method.
+---
 
-### 2. Start Betting
-To start the bot:
-Press **Start** button
+## **How to Use**
+### **1. Launch the App**
+- Open the **Plinko Automation iOS** app.
+- Wait for the **splash screen** (2 seconds), the WebView will load the Stake Plinko page simultaneuosly.
 
-### 3. Pause Automation
-To temporarily pause betting:
-Press **Pause** button
+### **2. Start Betting**
+- Press the **Start** button to begin **automated betting**.
 
+### **3. Toggle Brainless Mode**
+- Enable **Brainless Mode** to place **constant small bets** instead of Fibonacci betting.
 
-### 4. Resume Automation
-To resume betting after a pause:
-Press **Resume** button
+### **4. Pause & Resume Automation**
+- Press **Pause** to stop temporarily.
+- Press **Resume** to continue betting.
 
+### **5. Stop the Automation**
+- Press **Stop** to completely stop the bot.
 
-### 5. Stop the Automation
-To completely stop the bot:
-Press **Stop** button
+### **6. Set Target Balance**
+- Enter a **target balance** in the text field and press **Set** to define a stopping point.
 
+---
 
-### 6. Set Target Balance
-To define a stopping point when a certain balance is reached:
-Set target balance in the text field
+## **Configuration**
+### **Currency Handling**
+- **Gold Currency:** Minimum bet = **0.11**.
+- **Sweeps Currency:** Minimum bet = **0.01**.
+- The script **automatically detects** the active currency and adjusts bets accordingly.
 
-## Configuration
-### Currency Handling
-- If the **active currency is Gold**, the minimum bet is **0.11**.
-- If the **active currency is Sweeps**, the minimum bet is **0.01**.
-- The script automatically detects the current currency and adjusts bets accordingly.
+### **Betting Strategies**
+#### **Fibonacci Betting Mode (Default)**
+1. Starts with a **base bet** of **0.0001**.
+2. If the bot encounters **7 consecutive losses**, it switches to a **Fibonacci progression** to recover losses.
+3. Once a **win is detected**, the bet resets to the **minimum value**.
 
-### Betting Strategy
-- The script starts with a base bet of **0.0001**.
-- If the bot encounters a **loss streak** of 7 bets, it switches to a **Fibonacci progression** to recover losses.
-- Once a win is detected, the bet resets to the minimum value.
+#### **Brainless Mode**
+- When enabled, the bot **ignores wins/losses** and **spams** the same small bet **non-stop**.
 
-## Dependencies
-- WebKit (WKWebView) for injecting JavaScript
-- Stake website compatibility
+---
 
-## Troubleshooting
-- Ensure that the WebView has JavaScript execution enabled.
-- Make sure the selectors for the game elements match the current Stake website structure.
-- If bets are not being placed, confirm that the currency is correctly detected.
-- If encountering `JavaScript exception occurred`, check the console logs for missing elements or incorrect selectors.
+## **Dependencies**
+- **WebKit (WKWebView)** for injecting JavaScript.
+- **Stake website compatibility** (Selectors may need updates if the site's structure changes).
+- **AVFoundation** for **silent audio trick** to enable background execution.
+- **UIKit** for **Haptic Touch Feedback**.
 
-## Disclaimer
-This software is for educational and research purposes only. Use it at your own risk. The authors are not responsible for any losses incurred while using this automation tool.
+---
 
+## **Troubleshooting**
+❌ **WebView not loading?**  
+✔ Ensure that JavaScript execution is **enabled** in WebView.  
+
+❌ **Bets are not being placed?**  
+✔ Confirm that the **game selectors** match the **latest Stake website structure**.  
+
+❌ **Incorrect bet amount?**  
+✔ Check if the bot is correctly detecting **Gold or Sweeps currency**.  
+
+❌ **Automation stops suddenly?**  
+✔ Verify that the **target balance** is not reached.  
+
+❌ **Background execution not working?**  
+✔ Ensure the **silent audio** is playing in the background.  
+
+---
+
+## **Disclaimer**
+🚨 **This software is for educational and research purposes only.**  
+📌 **Use at your own risk.** The authors are **not responsible** for any losses incurred while using this automation tool.  
+
+---
