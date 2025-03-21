@@ -10,73 +10,110 @@ import WebKit
 
 struct ContentView: View {
     let plinkoURL = URL(string: "https://stake.us/casino/games/plinko")!
+    
     @State private var webView = WebView(url: URL(string: "https://stake.us/casino/games/plinko")!)
     @State private var userTargetBalance: String = ""
     @State private var brainlessMode: Bool = false
     @State private var keyboardHeight: CGFloat = 0 // Track keyboard height
+    
+    @State private var showSplash = true
+
 
     var body: some View {
-        VStack(spacing: 10) {
-            webView
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
-
-            VStack(spacing: 1) {
-                HStack(spacing: 6) {
-                    Button("Start") { webView.startJS() }
+        ZStack{
+            VStack(spacing: 10) {
+                webView
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack(spacing: 1) {
+                    HStack(spacing: 6) {
+                        Button("Start") {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            webView.startJS()
+                        }
                         .buttonStyle(ActionButtonStyle(color: Color(UIColor(hue: 0.6361, saturation: 0.83, brightness: 1, alpha: 1.0))))
-
-                    Button("Pause") { webView.pauseJS() }
+                        
+                        Button("Pause") {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            webView.pauseJS()
+                        }
                         .buttonStyle(ActionButtonStyle(color: Color(UIColor(hue: 0.1333, saturation: 0.83, brightness: 1, alpha: 1.0))))
-
-                    Button("Resume") { webView.resumeJS() }
+                        
+                        Button("Resume") {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            webView.resumeJS()
+                        }
                         .buttonStyle(ActionButtonStyle(color: Color(UIColor(hue: 0.3694, saturation: 0.83, brightness: 0.65, alpha: 1.0))))
-                    Button("Stop") { webView.stopJS() }
+                        Button("Stop") {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            webView.stopJS()
+                        }
                         .buttonStyle(ActionButtonStyle(color: Color(UIColor(hue: 0, saturation: 0.83, brightness: 1, alpha: 1.0))))
-                }
-                .padding()
-
-                HStack(spacing: 10) {
-                    Toggle("Brainless", isOn: $brainlessMode)
-                        .onChange(of: brainlessMode) { webView.toggleBrainlessMode(brainlessMode) }
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                        .frame(width: 130)
-                        .foregroundColor(.white)
-                        .font(.custom("Helvetica-Bold", size: 13))
-
-                    TextField("Target Balance", text: $userTargetBalance)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: 150)
-                        .font(.custom("Helvetica-Bold", size: 13))
-                        .padding(5)
-                        .onTapGesture {
-                            withAnimation {
-//                                keyboardHeight = 250 // Adjust for keyboard
-                            }
-                        }
-
-                    Button("Set") {
-                        if let val = Double(userTargetBalance) {
-                            webView.setTargetBalance(val)
-                        }
-                        hideKeyboard()
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .foregroundColor(.blue)
-                    .font(.custom("Helvetica-Bold", size: 18))
+                    .padding()
+                    
+                    HStack(spacing: 10) {
+                        Toggle("Brainless", isOn: $brainlessMode)
+                            .onChange(of: brainlessMode) {
+                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                                webView.toggleBrainlessMode(brainlessMode)
+                            }
+                            .toggleStyle(SwitchToggleStyle(tint: .green))
+                            .frame(width: 130)
+                            .foregroundColor(.white)
+                            .font(.custom("Helvetica-Bold", size: 13))
+                        
+                        TextField("Target Balance", text: $userTargetBalance)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 150)
+                            .font(.custom("Helvetica-Bold", size: 13))
+                            .padding(5)
+                            .onTapGesture {
+                                withAnimation {}
+                            }
+                        
+                        Button("Set") {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            
+                            if let val = Double(userTargetBalance) {
+                                webView.setTargetBalance(val)
+                            }
+                            hideKeyboard()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .foregroundColor(.blue)
+                        .font(.custom("Helvetica-Bold", size: 18))
+                    }
+                    .padding()
                 }
+                .cornerRadius(10)
                 .padding()
             }
-            .cornerRadius(10)
-            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(UIColor(hue: 0.5139, saturation: 0.49, brightness: 0.18, alpha: 1.0)))
+            .edgesIgnoringSafeArea(.all)
+            .offset(y: -keyboardHeight) // Move everything up
+            .animation(.easeInOut(duration: 0.3), value: keyboardHeight) // Fix deprecated animation
+            .onAppear {
+                observeKeyboard()
+            } // Start listening for keyboard changes
+            
+            // Splash Screen Overlay
+            if showSplash {
+                SplashView()
+                    .transition(.opacity)  // Fade effect
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(UIColor(hue: 0.5139, saturation: 0.49, brightness: 0.18, alpha: 1.0)))
-        .edgesIgnoringSafeArea(.all)
-        .offset(y: -keyboardHeight) // Move everything up
-        .animation(.easeInOut(duration: 0.3), value: keyboardHeight) // Fix deprecated animation
-        .onAppear { observeKeyboard() } // Start listening for keyboard changes
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showSplash = false
+                }
+            }
+        }
     }
+
 
     /// Detects keyboard events and updates `keyboardHeight`
     private func observeKeyboard() {

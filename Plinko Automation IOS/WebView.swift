@@ -88,6 +88,7 @@ struct WebView: ViewRepresentable {
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             // Now that the page is loaded, inject the JS
             parent.injectJavaScript()
+            
         }
         
         // Receive messages from JS via window.webkit.messageHandlers.jsLog.postMessage(...)
