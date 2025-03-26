@@ -104,6 +104,10 @@ struct ContentView: View {
                 SplashView()
                     .transition(.opacity)  // Fade effect
             }
+            
+            // The audio is playing, but still need to fix 
+//            PiPView()
+//                .frame(width: 0, height: 0)
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
