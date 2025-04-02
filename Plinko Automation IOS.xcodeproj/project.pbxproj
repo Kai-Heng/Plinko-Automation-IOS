@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7229F52B2D9386DC002A6EB1 /* PiPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229F52A2D9386DC002A6EB1 /* PiPView.swift */; };
-		7229F52D2D9388E1002A6EB1 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7229F52C2D9388E1002A6EB1 /* dummy.mp4 */; };
 		7229F52F2D938B66002A6EB1 /* dummy1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7229F52E2D938B66002A6EB1 /* dummy1.mp4 */; };
 		72394D372D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */; };
 		72394D392D68EA9000476EE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72394D382D68EA9000476EE9 /* ContentView.swift */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		7229F52A2D9386DC002A6EB1 /* PiPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiPView.swift; sourceTree = "<group>"; };
-		7229F52C2D9388E1002A6EB1 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dummy.mp4; path = ../../../Downloads/dummy.mp4; sourceTree = "<group>"; };
 		7229F52E2D938B66002A6EB1 /* dummy1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy1.mp4; sourceTree = "<group>"; };
 		72394D332D68EA9000476EE9 /* Plinko Automation IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plinko Automation IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72394D362D68EA9000476EE9 /* Plinko_Automation_IOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plinko_Automation_IOSApp.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				72DD86292D8E129A00F75FC2 /* SplashView.swift */,
 				7229F52A2D9386DC002A6EB1 /* PiPView.swift */,
 				72DD86252D8E0A3E00F75FC2 /* 1-hour-of-silence.mp3 */,
-				7229F52C2D9388E1002A6EB1 /* dummy.mp4 */,
 				7229F52E2D938B66002A6EB1 /* dummy1.mp4 */,
 				72394D662D68F52A00476EE9 /* CookieManager.swift */,
 				72394D3A2D68EA9100476EE9 /* Assets.xcassets */,
@@ -272,7 +269,6 @@
 				72DD86282D8E0D2C00F75FC2 /* Plinko-Automation-IOS-Info.plist in Resources */,
 				72394D3F2D68EA9100476EE9 /* Preview Assets.xcassets in Resources */,
 				72DD86262D8E0A3F00F75FC2 /* 1-hour-of-silence.mp3 in Resources */,
-				7229F52D2D9388E1002A6EB1 /* dummy.mp4 in Resources */,
 				7229F52F2D938B66002A6EB1 /* dummy1.mp4 in Resources */,
 				72394D3B2D68EA9100476EE9 /* Assets.xcassets in Resources */,
 			);

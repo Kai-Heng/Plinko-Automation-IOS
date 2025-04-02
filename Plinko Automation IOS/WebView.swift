@@ -118,12 +118,12 @@ struct WebView: ViewRepresentable {
             let betNumber = 0;
             let counter = 0;
 
-            const betInputSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-sidebar.svelte-2ftx9j.stacked > label:nth-child(1) > div > div.input-content.svelte-1nbx5re > input";
-            const playButtonSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-sidebar.svelte-2ftx9j.stacked > button";
-            const multiplierSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div > div.content.svelte-s7t0yi.stacked > div.game-content.svelte-1ku0r3.stacked > div > div.last-bet-wrap.svelte-1hd0qmg > div > button";
-            const balanceSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button > div > div > span.content.svelte-didcjq > span";
-            const coinSelector = "#svelte > div.wrap.svelte-2gw7o8 > div.main-content.svelte-2gw7o8 > div.navigation.svelte-1nt2705.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button";
-            const lastBetSelector = "#main-content > div.parent.svelte-1ydxan2 > div > div > div > div";
+            const betInputSelector = "#main-content > div.parent.svelte-zd0v12 > div > div > div > div > div.content.svelte-ox2dni.stacked > div.game-sidebar.svelte-1dz8jt.stacked > label:nth-child(1) > div > div.input-content.svelte-8suaw0 > input";
+            const playButtonSelector = "#main-content > div.parent.svelte-zd0v12 > div > div > div > div > div.content.svelte-ox2dni.stacked > div.game-sidebar.svelte-1dz8jt.stacked > button";
+            const multiplierSelector = "#main-content > div.parent.svelte-zd0v12 > div > div > div > div > div.content.svelte-ox2dni.stacked > div.game-content.svelte-1wvo54z.stacked > div > div.last-bet-wrap.svelte-106lt8q > div > button";
+            const balanceSelector = "#svelte > div.wrap.svelte-18bax54 > div.main-content.svelte-18bax54 > div.navigation.svelte-yru4e3.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button > div > div > span.content.svelte-1ww4dvg > span";
+            const coinSelector = "#svelte > div.wrap.svelte-18bax54 > div.main-content.svelte-18bax54 > div.navigation.svelte-yru4e3.mobile > div > div > div > div.balance-toggle.svelte-1o8ossz > div > div > div > button";
+            const lastBetSelector = "#main-content > div.parent.svelte-zd0v12 > div > div > div > div";
 
             function logToSwift(message) {
                 try {
